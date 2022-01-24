@@ -1,7 +1,12 @@
 import 'package:conduit/conduit.dart';
 import 'package:heroes/heroes.dart';
+import 'package:heroes/model/hero.dart';
 
 class HeroesController extends ResourceController {
+  HeroesController(this.context);
+
+  final ManagedContext context;
+
   final _heroes = [
     {'id': 11, 'name': 'Batman'},
     {'id': 12, 'name': 'Wonder Woman'},
