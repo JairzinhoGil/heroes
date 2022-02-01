@@ -1,0 +1,7 @@
+database:
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5435 # change this value
+  databaseName: Heroes
+  
