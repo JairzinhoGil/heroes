@@ -24,8 +24,21 @@ class Harness extends TestHarness<HeroesChannel> with TestHarnessORMMixin {
   ManagedContext get context => channel!.context;
 
   @override
-  Future onSetUp() async {}
+  Future onSetUp() async {
+    await resetData();
+  }
 
   @override
   Future onTearDown() async {}
+
+  @override
+  Future seed() async {
+    final heroNames = ["Mr. Nice", "Narco", "Bombasto", "Celeritas", "Magneta"];
+
+    for (final heroName in heroNames) {
+      await context.persistentStore?.execute(
+          "INSERT INTO _Hero (name) VALUES (@name)",
+          substitutionValues: {"name": heroName});
+    }
+  }
 }

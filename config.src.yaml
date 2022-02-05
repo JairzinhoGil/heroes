@@ -1,6 +1,7 @@
 database:
+  username: postgres
+  password: postgres
   host: localhost
-  port: 5435
-  username: dart
-  password: dart
-  databaseName: dart_test
+  port: 5435 # change this value
+  databaseName: heroes_test
+  
